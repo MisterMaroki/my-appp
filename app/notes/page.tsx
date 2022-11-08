@@ -1,4 +1,4 @@
-('use client');
+// ('use client');
 
 import FormEntry from './formEntry';
 import NotesList from './notesList';

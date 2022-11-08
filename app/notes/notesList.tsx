@@ -1,21 +1,17 @@
 import Link from 'next/link';
-import React, { useEffect } from 'react';
-import useNotesStore from '../Store';
-import PageButtons from './PageButtons';
 import PocketBase from 'pocketbase';
 import DeleteButton from './DeleteButton';
+import PageButtons from './PageButtons';
 import TickBox from './TickBox';
 
-const client = new PocketBase('http://127.0.0.1:8090');
+// const client = new PocketBase('http://127.0.0.1:8090');
+const client = new PocketBase('https://rough-haze-8495.fly.dev');
 
 export default async function NotesList(props: any) {
-	// const { page, setPage } = useNotesStore();
 	const { page } = props;
 
-	const [{ items }, data] = await Promise.all([
-		client.records.getList('notes', page, 10),
-		getNotes(page),
-	]);
+	const { items, totalPages } = await client.records.getList('notes', page, 5);
+
 	return (
 		<div>
 			<ul>
@@ -36,35 +32,35 @@ export default async function NotesList(props: any) {
 							<p>{note.title}</p>
 						</Link>
 
-						<DeleteButton id={note.id} page={page} />
-
 						<TickBox id={note.id} page={page} value={note.success} />
+
+						<DeleteButton id={note.id} page={page} />
 					</li>
 				))}
 			</ul>
 
-			<PageButtons page={props.page} />
+			<PageButtons page={props.page || 1} totalPages={totalPages} />
 		</div>
 	);
 }
 
-async function getNotes(page: number) {
-	// const res = await client.records.getList('notes', 1, 50, {
-	// 	filter: 'created >= "2022-01-01 00:00:00"',
-	//
-	//
-	//
-	// });
-	// return res.items;
-	const res = await fetch(
-		`http://127.0.0.1:8090/api/collections/notes/records`,
-		{ cache: 'no-cache' }
-		// { next: { revalidate: 5 } }
-	);
-	const data: RootObject = await res.json();
-	// console.log('🚀 ~ file: notesList.tsx ~ line 51 ~ getNotes ~ res', data);
-	return data.items;
-}
+// async function getNotes(page: number) {
+// 	// const res = await client.records.getList('notes', 1, 50, {
+// 	// 	filter: 'created >= "2022-01-01 00:00:00"',
+// 	//
+// 	//
+// 	//
+// 	// });
+// 	// return res.items;
+// 	const res = await fetch(
+// 		`http://127.0.0.1:8090/api/collections/notes/records`,
+// 		{ cache: 'no-cache' }
+// 		// { next: { revalidate: 5 } }
+// 	);
+// 	const data: RootObject = await res.json();
+// 	// console.log('🚀 ~ file: notesList.tsx ~ line 51 ~ getNotes ~ res', data);
+// 	return data.items;
+// }
 interface RootObject {
 	page: number;
 	perPage: number;

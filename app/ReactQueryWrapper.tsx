@@ -13,4 +13,3 @@ export default function ReactQueryWrapper({
 		<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 	);
 }
-
