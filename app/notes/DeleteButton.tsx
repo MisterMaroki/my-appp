@@ -16,10 +16,6 @@ export default function DeleteButton({ id, page }: any) {
 		).finally(() => {
 			router.refresh();
 		});
-		console.log(
-			'🚀 ~ file: DeleteButton.tsx ~ line 15 ~ removeNote ~ data',
-			res
-		);
 	};
 
 	return (

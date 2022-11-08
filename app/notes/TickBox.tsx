@@ -11,8 +11,6 @@ export default function TickBox({ id, page, value }: any) {
 	const router = useRouter();
 
 	const toggleNote = async () => {
-		const data = { success: false, title: 'de' };
-
 		const record = await client.records
 			.update('notes', id, {
 				success: !value,
