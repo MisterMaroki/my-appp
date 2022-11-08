@@ -1,26 +1,32 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@tanstack/react-query': ^4.14.1
   '@types/node': 18.11.9
   '@types/react': 18.0.24
   '@types/react-dom': 18.0.8
   eslint: 8.26.0
   eslint-config-next: 13.0.1
   next: 13.0.1
+  pocketbase: ^0.7.4
   react: 18.2.0
   react-dom: 18.2.0
   typescript: 4.8.4
+  zustand: ^4.1.4
 
 dependencies:
+  '@tanstack/react-query': 4.14.1_biqbaboplfbrettd7655fr4n2y
   '@types/node': 18.11.9
   '@types/react': 18.0.24
   '@types/react-dom': 18.0.8
   eslint: 8.26.0
   eslint-config-next: 13.0.1_wyqvi574yv7oiwfeinomdzmc3m
   next: 13.0.1_biqbaboplfbrettd7655fr4n2y
+  pocketbase: 0.7.4
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   typescript: 4.8.4
+  zustand: 4.1.4_react@18.2.0
 
 packages:
 
@@ -232,6 +238,28 @@ packages:
     resolution: {integrity: sha512-rEUrBSGIoSFuYxwBYtlUFMlE2CwGhmW+w9355/5oduSw8e5h2+Tj4UrAGNNgP9915++wj5vkQo0UuOBqOAq4nw==}
     dependencies:
       tslib: 2.4.1
+    dev: false
+
+  /@tanstack/query-core/4.14.1:
+    resolution: {integrity: sha512-mUejKoFDe4NZB8jQJR1uuAl6IwvkUpOD2m8NcuTVPOu0pcxeeFPdrnHaljwOEFPtlqXoiiIIQGYy6whjCMN+iQ==}
+    dev: false
+
+  /@tanstack/react-query/4.14.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-cRgNzigw4GSPwGlTEkXi8hi/xgUnSEt9jCkiC8oAT3PEIdsQ50onZcpXd+JNJcZk2RTh8KM1fGyWz6xYLiY8bg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 4.14.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
   /@types/json5/0.0.29:
@@ -1539,6 +1567,10 @@ packages:
     engines: {node: '>=8.6'}
     dev: false
 
+  /pocketbase/0.7.4:
+    resolution: {integrity: sha512-PvBRi4hbgbiBwDjhHa9lGD/ala8dSTjKeNAsHAgsXdIo4v9RgCk2s3Zqd/4UXVBgTJHVM6F7fGOZPvvJfSNVLQ==}
+    dev: false
+
   /postcss/8.4.14:
     resolution: {integrity: sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==}
     engines: {node: ^10 || ^12 || >=14}
@@ -1895,4 +1927,20 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  /zustand/4.1.4_react@18.2.0:
+    resolution: {integrity: sha512-k2jVOlWo8p4R83mQ+/uyB8ILPO2PCJOf+QVjcL+1PbMCk1w5OoPYpAIxy9zd93FSfmJqoH6lGdwzzjwqJIRU5A==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
