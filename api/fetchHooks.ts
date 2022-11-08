@@ -2,7 +2,6 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 // Fetch function
 import { fetchNotes } from './fetchFunctions';
 // Types
-import { Note } from '../app/Store';
 export const useFetchNotes = (pageParam: number = 1) => {
 	return useInfiniteQuery(
 		['movies'],
@@ -19,4 +18,3 @@ export const useFetchNotes = (pageParam: number = 1) => {
 		}
 	);
 };
-

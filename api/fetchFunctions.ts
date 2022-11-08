@@ -1,5 +1,3 @@
-import { Note } from '../app/Store';
-
 export const basicFetch = async <returnType>(
 	endpoint: string
 ): Promise<returnType> => {
@@ -16,4 +14,3 @@ export const basicFetch = async <returnType>(
 export const fetchNotes = async (page = 1): Promise<any> => {
 	return await basicFetch<any>(`/api/movies?page=${page}`);
 };
-
