@@ -1,5 +1,6 @@
 'use client';
 
+import next from 'next';
 import { useRouter } from 'next/navigation';
 import PocketBase from 'pocketbase';
 
@@ -12,6 +13,7 @@ export default function DeleteButton({ id, page }: any) {
 		// const res = await client.records.delete('notes', id);
 		const res = await fetch(
 			`https://rough-haze-8495.fly.dev/api/collections/notes/records/${id}`,
+			// `http://127.0.0.1:8090/api/collections/notes/records/${id}`,
 			{ method: 'DELETE', cache: 'no-cache' }
 		).finally(() => {
 			router.refresh();
